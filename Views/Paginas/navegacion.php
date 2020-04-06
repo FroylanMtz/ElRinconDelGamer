@@ -27,25 +27,28 @@
                     <i class="fa fa-th"></i> <span>Dashboard</span>
                 </a>
             </li> 
-            <!--OPCION DE ALUMNOS-->
+
+
+
+            <!--OPCION DE CONSOLAS-->
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-user"></i>
-                    <span>Alumnos</span>
+                    <i class="fas fa-gamepad"></i>
+                    <span>Consolas</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="inicio.php?action=alumnos">
+                        <a href="inicio.php?action=consolas">
                             
-                            <i class="far fa-list-alt"></i> Lista de alumnos
+                            <i class="far fa-list-alt"></i> Lista de Consolas
                         </a>
                     </li>
                     <li active>
-                        <a href="inicio.php?action=agregar_alumno">
-                            <i class="fas fa-user-plus"></i> Agregar alumno
+                        <a href="inicio.php?action=agregar_consola">
+                            <i class="fas fa-plus"></i> Agregar consola
                         </a>
                     </li>
                 </ul>

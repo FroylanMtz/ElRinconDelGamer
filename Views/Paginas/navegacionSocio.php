@@ -19,11 +19,11 @@
         <ul class="sidebar-menu" data-widget="tree">
 
             <!--ENCABEZADO-->
-            <li class="header"> <center> <strong> ADMINISTRACION </strong> </center> </li>
+            <li class="header"> <center> <strong> SOCIO </strong> </center> </li>
 
             <!--OPCION DE DASHBOARD-->
             <li>
-                <a href="inicio.php?action=dashboard_tutor">
+                <a href="inicio.php?action=dashboard_socio">
                     <i class="fa fa-th"></i> <span>Dashboard</span>
                 </a>
             </li> 

@@ -202,8 +202,50 @@ class Datos extends Conexion{
     }
 
     
+    /*******************  ADMINSITRACION DE CONSOLAS    ***************/
+    public function traerDatosPlataformas() {
 
-    
+        //Se prepara el query
+        $query = Conexion::conectar()->prepare("SELECT id, nombre FROM plataformas");
+
+        //se ejecuta
+        $query->execute();
+
+        $resultado = array();
+
+        //Se trane todos los ddatos
+        $resultado = $query->FetchAll();
+        
+        //y finalmente se pasan al controlador para ponerlos en la vista en donde se hace la edicion de dicho registro
+        return $resultado;
+
+    }
+
+
+    public function guardarDatosConsola($datosConsola, $tabla){
+
+        //Se prepara el query con el comando INSERT -> DE INSERTAR 
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla( id_plataforma, numero, serial_consola, costo_renta, total_monedas) VALUES(:id_plataforma, :numero, :serial, :costo_renta, :total_monedas) ");
+        
+        //Se colocan todos sus parametros especificados, y se relacionan con los datos pasdaos por parametro a esta funcion desde el controladro en modo de array asociativo
+        //Asi como se especifica como deben ser tratados (tipo de dato)
+
+        $stmt->bindParam(":id_plataforma", $datosConsola["plataformaConsola"] , PDO::PARAM_INT);
+        $stmt->bindParam(":numero", $datosConsola["numeroConsola"], PDO::PARAM_INT);
+        $stmt->bindParam(":serial", $datosConsola["serialConsola"], PDO::PARAM_STR);
+        $stmt->bindParam(":costo_renta", $datosConsola["costoRenta"], PDO::PARAM_INT);
+        $stmt->bindParam(":total_monedas", $datosConsola["totalMonedas"], PDO::PARAM_INT);
+
+        //print_r($datosConsola);
+        if($stmt->execute()){
+            return "success";
+        }else{
+            return "error";
+        }
+
+    }
+
+
 
 }
 

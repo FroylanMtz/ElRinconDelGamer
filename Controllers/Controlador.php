@@ -354,5 +354,58 @@ class Controlador
     }
 
 
+    /***  ADMINISTRACION DE CONSOLAS ***/
+
+    public function obtenerDatosPlataformas(){
+
+        $datosDePlataformas = array();
+        $datosDePlataformas = Datos::traerDatosPlataformas();
+        return $datosDePlataformas;
+        
+    }
+
+    public function guardarDatosConsola(){
+
+        if( empty($_POST['totalMonedas']) || empty($_POST['numeroConsola']) || empty($_POST['serialConsola']) || empty($_POST['costoRenta']) ){
+
+
+            echo '<script> 
+                    window.location.href = "inicio.php?action=agregar_consola&e=camposVacios";
+                  </script>';
+
+
+        }else{
+            
+            $nombreConsola = $_POST['plataforma'];
+            $numeroConsola = $_POST['numeroConsola'];
+            $serialConsola = $_POST['serialConsola'];
+            $costoRenta = $_POST['costoRenta'];
+            $totalMonedas = $_POST['totalMonedas'];
+
+            $datosConsola = array('plataformaConsola' => $nombreConsola,
+                            'numeroConsola' => $numeroConsola,
+                            'serialConsola' => $serialConsola,
+                            'costoRenta' => $costoRenta,
+                            'totalMonedas' => $totalMonedas );
+
+            
+            $respuesta = Datos::guardarDatosConsola($datosConsola, "consolas");
+            
+            if($respuesta == "success"){
+                echo '<script>
+                        window.location.href = "inicio.php?action=agregar_consola&e=successGuardar";
+                      </script>';
+            }else{
+                echo '<script>
+                        window.location.href = "inicio.php?action=agregar_consola&e=errorGuardar";
+                      </script>';
+            }
+
+        }  
+
+        
+
+    }
+
 
 }
