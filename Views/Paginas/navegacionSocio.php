@@ -27,29 +27,7 @@
                     <i class="fa fa-th"></i> <span>Dashboard</span>
                 </a>
             </li> 
-            <!--OPCION DE TUTORIAS-->
-            <li class="treeview">
-                <a href="#">
-                    <i class="fas fa-hands-helping"></i>
-                    <span>Tutorias</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="inicio.php?action=tutorias">
-                            
-                            <i class="fas fa-list-ol"></i> Lista de tutorias
-                        </a>
-                    </li>
-                    <li>
-                        <a href="inicio.php?action=agregar_tutoria">
-                            <i class="fas fa-plus-square"></i> Nueva tutoria 
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            
 
             
         </ul>

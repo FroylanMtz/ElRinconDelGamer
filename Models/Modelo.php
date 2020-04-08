@@ -12,7 +12,8 @@ class Modelo
             if( $enlace == "dashboard" || 
                 $enlace == "salir" ||
                 $enlace == "consolas" || 
-                $enlace == "agregar_consola"){
+                $enlace == "agregar_consola" ||
+                $enlace == "editar_consola" ){
                 //Mostramos el URL concatenado con la variable $enlacesModel
                 $pagina = "Views/Paginas/Administrador/". $enlace .".php";
             }
