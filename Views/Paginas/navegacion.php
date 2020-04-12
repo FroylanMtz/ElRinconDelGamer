@@ -5,12 +5,15 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-            <img src="Public/img/user.png" class="img-circle" alt="User Image">
+            <img src="../Public/img/user.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
             <?php
-                echo '<p>'.$_SESSION['nombre'].'</p>';
-                echo '<a href="#">' . $_SESSION['tipoUsuario'] . '</a>';
+              echo '<p>'.$_SESSION['nombre'].'</p>';
+              if($_SESSION['tipoUsuario'] == '1')
+                echo '<h6>' . 'Administrador' . '</h6>';
+              else
+                echo '<h6>' . 'Gamer' . '</h6>';
             ?>
             </div>
         </div>
@@ -19,42 +22,29 @@
         <ul class="sidebar-menu" data-widget="tree">
 
             <!--ENCABEZADO-->
-            <li class="header"> <center> <strong> ADMINISTRACION </strong> </center> </li>
+            <li class="header"> <center> <strong> GAMER </strong> </center> </li>
 
             <!--OPCION DE DASHBOARD-->
             <li>
-                <a href="inicio.php?action=dashboard">
-                    <i class="fa fa-th"></i> <span>Dashboard</span>
+                <a href="../torneos/torneosGamer.php">
+                    <i class="fa fa-th"></i> <span>Lista de torneos</span>
                 </a>
-            </li> 
-
-
-
-            <!--OPCION DE CONSOLAS-->
-            <li class="treeview">
-                <a href="#">
-                    <i class="fas fa-gamepad"></i>
-                    <span>Consolas</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="inicio.php?action=consolas">
-                            
-                            <i class="far fa-list-alt"></i> Lista de Consolas
-                        </a>
-                    </li>
-                    <li active>
-                        <a href="inicio.php?action=agregar_consola">
-                            <i class="fas fa-plus"></i> Agregar consola
-                        </a>
-                    </li>
-                </ul>
             </li>
-
-            
+            <li>
+                <a href="../torneos/misTorneos.php">
+                    <i class="fa fa-th"></i> <span>Mis torneos</span>
+                </a>
+            </li>
+            <li>
+                <a href="../torneos/invitaciones.php">
+                    <i class="fa fa-th"></i> <span>Invitaciones</span>
+                </a>
+            </li>
+            <li>
+                <a href="../rentas/rentasHistorico.php">
+                    <i class="fa fa-th"></i> <span>Historiales</span>
+                </a>
+            </li>
         </ul>
     </section>
 </aside>
